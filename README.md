@@ -1,4 +1,4 @@
-# screenlogic-test
+# Pentair Dual Temperature control (Home Assistant Add-On)
 
 This project demonstrates how to set low and high temperature for Pentair pool systems equipped with heat pumps in both heat and cool modes, using the `node-screenlogic` library.
 
@@ -22,15 +22,20 @@ docker build -t node_dual_temp .
 docker run -e gateway_ip=192.168.1.118 -e low_temp=22 -e high_temp=35 -e device_index=0 node_dual_temp
 ```
 
-### Package for Home Assistant OS
-```bash
-zip -r node_dual_temp.zip .
-```
-Then in Home Assistant OS (HAOS):
-1. Go to Settings > Add-ons > Add-on Store
-2. Click the three dots (top right)
-3. Select 'Upload Add-on'
-4. Upload `node_dual_temp.zip`
+
+### Package and Install for Home Assistant OS
+1. Zip the repository contents:
+	```bash
+	zip -r node_dual_temp.zip .
+	```
+2. Upload `node_dual_temp.zip` to HAOS using the File Explorer add-on.
+3. Open the Terminal add-on in HAOS and move/unzip the contents:
+	```bash
+	mv /path/to/node_dual_temp.zip /root/addons/
+	cd /root/addons
+	unzip node_dual_temp.zip -d node_dual_temp
+	```
+4. Go to Settings > Add-ons > Add-on Store > Find and install "NodeJS Dual Temp" in the Add-ons registry.
 
 ## Usage
 
