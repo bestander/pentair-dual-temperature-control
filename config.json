@@ -1,21 +1,28 @@
 {
-  "name": "NodeJS Dual Temp",
+  "name": "NodeJS Dual Temp Service",
   "version": "0.1",
-  "slug": "node_dual_temp",
-  "description": "Runs a Node.js script to set dual temperatures for ScreenLogic",
+  "slug": "node_dual_temp_service",
+  "description": "Runs a Node.js service to set dual temperatures for ScreenLogic with fresh connections",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-  "startup": "application",
+  "startup": "system",
   "boot": "auto",
+  "ports": {
+    "8080/tcp": 8080
+  },
+  "ports_description": {
+    "8080/tcp": "HTTP Server Port"
+  },
   "options": {
     "gateway_ip": "192.168.1.118",
-    "low_temp": 22,
-    "high_temp": 35,
+    "low_temp": 20,
+    "high_temp": 29,
     "device_index": 0
   },
   "schema": {
     "gateway_ip": "str",
     "low_temp": "int(10,40)",
-    "high_temp": "int(10,40)"
+    "high_temp": "int(10,40)",
+    "device_index": "int(0,10)"
   },
   "map": ["config"]
 }

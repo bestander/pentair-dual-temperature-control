@@ -68,7 +68,6 @@ If no IP is provided, the script will attempt to discover a gateway automaticall
 
 ## Files
 - `index.js` - Main script for setting low and high temperatures for heat/cool mode
-- `index2.js` - Alternative script with fallback logic
 - `package.json` - Project dependencies
 
 ## License

@@ -10,8 +10,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install node-screenlogic
 
-# Copy the script
+# Copy the scripts
 COPY index.js .
+COPY server.js .
 
-# Command to run the script with environment variables
-CMD ["node", "index.js"]
+# Expose port and run the server
+EXPOSE 8080
+CMD ["node", "server.js"]
