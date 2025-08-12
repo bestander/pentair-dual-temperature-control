@@ -47,7 +47,6 @@ rest_command:
     content_type: "application/json"
     payload: '{"lowTemp": 10, "highTemp": 12}'
 
-rest_command:
   set_spa_heat:
     url: "http://local-node-dual-temp:8080/setTemperature"
     method: POST
