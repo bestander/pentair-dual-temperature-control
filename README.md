@@ -37,6 +37,24 @@ docker run -e gateway_ip=192.168.1.118 -e low_temp=22 -e high_temp=35 -e device_
 	```
 4. Go to Settings > Add-ons > Add-on Store > Find and install "NodeJS Dual Temp" in the Add-ons registry.
 
+5. Use rest command to change temperature
+
+```
+rest_command:
+  set_spa_chill:
+    url: "http://local-node-dual-temp:8080/setTemperature"
+    method: POST
+    content_type: "application/json"
+    payload: '{"lowTemp": 10, "highTemp": 12}'
+
+rest_command:
+  set_spa_heat:
+    url: "http://local-node-dual-temp:8080/setTemperature"
+    method: POST
+    content_type: "application/json"
+    payload: '{"lowTemp": 33, "highTemp": 35}'
+```
+
 ## Usage
 
 ### Prerequisites
