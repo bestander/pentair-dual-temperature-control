@@ -1,0 +1,21 @@
+{
+  "name": "NodeJS Dual Temp",
+  "version": "0.1",
+  "slug": "node_dual_temp",
+  "description": "Runs a Node.js script to set dual temperatures for ScreenLogic",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "options": {
+    "gateway_ip": "192.168.1.118",
+    "low_temp": 22,
+    "high_temp": 35,
+    "device_index": 0
+  },
+  "schema": {
+    "gateway_ip": "str",
+    "low_temp": "int(10,40)",
+    "high_temp": "int(10,40)"
+  },
+  "map": ["config"]
+}

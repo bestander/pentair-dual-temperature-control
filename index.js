@@ -46,9 +46,9 @@ async function setDualTemperature(gatewayIp, deviceIndex, lowTemp, highTemp) {
 
 }
 
-const gatewayIp = process.argv[2];
-const deviceIndex = process.argv[3];
-const lowTemp = process.argv[4];
-const highTemp = process.argv[5];
+const gatewayIp = process.env.gateway_ip || process.argv[2];
+const deviceIndex = process.env.device_index || process.argv[3];
+const lowTemp = process.env.low_temp || process.argv[4];
+const highTemp = process.env.high_temp || process.argv[5];
 
 setDualTemperature(gatewayIp, deviceIndex, lowTemp, highTemp);
